@@ -7,7 +7,7 @@ Requires=docker.service
 TimeoutStartSec=0
 ExecStartPre=-/usr/bin/docker kill helloservice
 ExecStartPre=-/usr/bin/docker rm helloservice
-ExecStartPre=/usr/bin/docker build -t helloimage http://github.com/AndyCaley/helloService
+ExecStartPre=/usr/bin/docker build -t helloimage http://github.com/AndyCaley/helloService.git
 ExecStart=/usr/bin/docker run --name helloservice -p 8080:8080 helloimage 
 ExecStop=/usr/bin/docker stop helloservice
 
